@@ -1,0 +1,9 @@
+rpi_client.py:92: RuntimeWarning: This channel is already in use, continuing anyway.  Use GPIO.setwarnings(False) to disable warnings.
+  GPIO.setup(LIGHT_PINS[key], GPIO.OUT)
+rpi_client.py:95: RuntimeWarning: This channel is already in use, continuing anyway.  Use GPIO.setwarnings(False) to disable warnings.
+  GPIO.setup(VALVE_PINS[key], GPIO.OUT)
+ioctl[SIOCSIWAP]: Operation not permitted
+ioctl[SIOCSIWENCODEEXT]: Invalid argument
+ioctl[SIOCSIWENCODEEXT]: Invalid argument
+motion_sensor_publisher.py:15: RuntimeWarning: This channel is already in use, continuing anyway.  Use GPIO.setwarnings(False) to disable warnings.
+  GPIO.setup(sensor_pin, GPIO.IN, GPIO.PUD_DOWN)
