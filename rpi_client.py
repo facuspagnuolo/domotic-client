@@ -34,13 +34,13 @@ def get_network_data():
    session.close
 
 def build_network_configuration_file():
-   os.system('echo "ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev" > wpa_supplicant.conf')
-   os.system('echo "update_config=1" >> wpa_supplicant.conf')
-   os.system('echo "" >> wpa_supplicant.conf')
-   os.system('echo "network={" >> wpa_supplicant.conf')
-   os.system("""echo '     ssid=\"%s\"' >> wpa_supplicant.conf""" % network)
-   os.system("""echo '     psk=\"%s\"' >> wpa_supplicant.conf""" % password)
-   os.system('echo "}" >> wpa_supplicant.conf')
+   os.system('echo "ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev" > config/wifi_interface.conf')
+   os.system('echo "update_config=1" >> config/wifi_interface.conf')
+   os.system('echo "" >> config/wifi_interface.conf')
+   os.system('echo "network={" >> config/wifi_interface.conf')
+   os.system("""echo '     ssid=\"%s\"' >> config/wifi_interface.conf""" % network)
+   os.system("""echo '     psk=\"%s\"' >> config/wifi_interface.conf""" % password)
+   os.system('echo "}" >> config/wifi_interface.conf')
 
 def connect_to_ad_hoc():
    os.system('sudo cp /etc/network/interfaces_adhoc /etc/network/interfaces')
@@ -49,7 +49,7 @@ def connect_to_ad_hoc():
 
 def connect_to_network():
    print "Connecting to network %s with password %s" %(network, password)
-   os.system('sudo cp wpa_supplicant.conf /etc/wpa_supplicant/wpa_supplicant.conf')
+   os.system('sudo cp config/wifi_interface.conf /etc/wpa_supplicant/wpa_supplicant.conf')
    os.system('sudo cp /etc/network/interfaces_default /etc/network/interfaces')
    os.system('sudo ifdown wlan0')
    os.system('sudo ifup wlan0')
@@ -87,6 +87,7 @@ def get_ip_address():
    return f.read().rstrip('\n')
 
 def clean_gpios():
+   GPIO.cleanup()
    GPIO.setmode(GPIO.BCM)
    for key in LIGHT_PINS:
      GPIO.setup(LIGHT_PINS[key], GPIO.OUT)
@@ -99,28 +100,28 @@ def initialize_publishers():
    print("Initialize cameras publishers")
    ip_address = get_ip_address()
    for key in CAMERAS:
-      pid = subprocess.Popen(["sudo", "python", "camera_publisher.py", domotic_server_ip, ROOM_ID, key, ip_address, CAMERAS[key]]).pid
-      os.system("echo '%s' > subprocesses_pids.txt" % str(pid))
+      pid = subprocess.Popen(["sudo", "python", "sensor_publishers/camera_publisher.py", domotic_server_ip, ROOM_ID, key, ip_address, CAMERAS[key]]).pid
+      os.system("echo '%s' > logs/subprocesses_pids.txt" % str(pid))
 
    print("Initialize motion sensors publishers")
    for key in MOTION_SENSOR_PINS:
-      pid = subprocess.Popen(["sudo", "python", "motion_sensor_publisher.py", domotic_server_ip, ROOM_ID, key, str(MOTION_SENSOR_PINS[key])]).pid
-      os.system("echo '%s' >> subprocesses_pids.txt" % str(pid))
+      pid = subprocess.Popen(["sudo", "python", "sensor_publishers/motion_sensor_publisher.py", domotic_server_ip, ROOM_ID, key, str(MOTION_SENSOR_PINS[key])]).pid
+      os.system("echo '%s' >> logs/subprocesses_pids.txt" % str(pid))
 
    print("Initialize temperature and humidity sensors publishers")
    for key in TEMPERATURE_SENSOR_PINS:
-      pid = subprocess.Popen(["sudo", "python", "temperature_and_humidity_sensor_publisher.py", domotic_server_ip, ROOM_ID, key, str(TEMPERATURE_SENSOR_PINS[key])]).pid
-      os.system("echo '%s' >> subprocesses_pids.txt" % str(pid))
+      pid = subprocess.Popen(["sudo", "python", "sensor_publishers/temperature_and_humidity_sensor_publisher.py", domotic_server_ip, ROOM_ID, key, str(TEMPERATURE_SENSOR_PINS[key])]).pid
+      os.system("echo '%s' >> logs/subprocesses_pids.txt" % str(pid))
 
    print("Initialize luminosity sensors publishers")
    for key in LUMINOSITY_SENSOR_PINS:
-      pid = subprocess.Popen(["sudo", "python", "luminosity_sensor_publisher.py", domotic_server_ip, ROOM_ID, key, str(LUMINOSITY_SENSOR_PINS[key])]).pid
-      os.system("echo '%s' >> subprocesses_pids.txt" % str(pid))
+      pid = subprocess.Popen(["sudo", "python", "sensor_publishers/luminosity_sensor_publisher.py", domotic_server_ip, ROOM_ID, key, str(LUMINOSITY_SENSOR_PINS[key])]).pid
+      os.system("echo '%s' >> logs/subprocesses_pids.txt" % str(pid))
 
    print("Initialize soil humidity sensors publishers")
    for key in SOIL_HUMIDITY_SENSOR_PINS:
-      pid = subprocess.Popen(["sudo", "python", "soil_humidity_sensor_publisher.py", domotic_server_ip, ROOM_ID, key, str(SOIL_HUMIDITY_SENSOR_PINS[key])]).pid
-      os.system("echo '%s' >> subprocesses_pids.txt" % str(pid))
+      pid = subprocess.Popen(["sudo", "python", "sensor_publishers/soil_humidity_sensor_publisher.py", domotic_server_ip, ROOM_ID, key, str(SOIL_HUMIDITY_SENSOR_PINS[key])]).pid
+      os.system("echo '%s' >> logs/subprocesses_pids.txt" % str(pid))
 
 def on_connect(client, userdata, rc):
    client.subscribe("rooms/" + ROOM_ID)

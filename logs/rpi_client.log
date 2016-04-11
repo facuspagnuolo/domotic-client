@@ -1,0 +1,385 @@
+Connecting to ad-hoc
+Got connection from  ('192.168.1.5', 55936)
+Connecting to network FS with password 44326188nina
+Traying to open to multicast server
+Could not reach domotic server :[Errno 19] No such device
+Traying to open to multicast server
+Could not reach domotic server :[Errno 19] No such device
+Traying to open to multicast server
+Could not reach domotic server :[Errno 19] No such device
+Traying to open to multicast server
+Could not reach domotic server :[Errno 19] No such device
+Traying to open to multicast server
+Could not reach domotic server :[Errno 19] No such device
+Traying to open to multicast server
+Waiting for domotic server to start
+ping domotic server from 192.168.0.17
+Initialize cameras publishers
+Initialize motion sensors publishers
+Initialize temperature and humidity sensors publishers
+Initialize luminosity sensors publishers
+Initialize soil humidity sensors publishers
+RPI room client connected with result code 0
+192.168.1.1:8081 (Room 1 - Camera 1)
+rooms/1/cameras/1/192.168.1.1/8081
+Switching ON light (1)
+Opening valve (1)
+Switching OFF light (1)
+Closing valve (1)
+23.0*C (Room 1 - Temperature sensor 1)
+rooms/1/temperature_sensors/1/23.0
+28.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/28.0
+29.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/29.0
+27.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/27.0
+26.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/26.0
+28.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/28.0
+25.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/25.0
+26.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/26.0
+27.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/27.0
+26.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/26.0
+27.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/27.0
+25.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/25.0
+27.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/27.0
+30.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/30.0
+26.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/26.0
+25.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/25.0
+27.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/27.0
+25.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/25.0
+26.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/26.0
+27.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/27.0
+21.0*C (Room 1 - Temperature sensor 1)
+rooms/1/temperature_sensors/1/21.0
+22.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/22.0
+23.0*C (Room 1 - Temperature sensor 1)
+rooms/1/temperature_sensors/1/23.0
+25.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/25.0
+27.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/27.0
+29.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/29.0
+21.0*C (Room 1 - Temperature sensor 1)
+rooms/1/temperature_sensors/1/21.0
+22.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/22.0
+23.0*C (Room 1 - Temperature sensor 1)
+rooms/1/temperature_sensors/1/23.0
+25.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/25.0
+27.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/27.0
+22.0*C (Room 1 - Temperature sensor 1)
+rooms/1/temperature_sensors/1/22.0
+28.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/28.0
+23.0*C (Room 1 - Temperature sensor 1)
+rooms/1/temperature_sensors/1/23.0
+26.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/26.0
+22.0*C (Room 1 - Temperature sensor 1)
+rooms/1/temperature_sensors/1/22.0
+32.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/32.0
+23.0*C (Room 1 - Temperature sensor 1)
+rooms/1/temperature_sensors/1/23.0
+31.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/31.0
+22.0*C (Room 1 - Temperature sensor 1)
+rooms/1/temperature_sensors/1/22.0
+28.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/28.0
+27.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/27.0
+28.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/28.0
+27.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/27.0
+21.0*C (Room 1 - Temperature sensor 1)
+rooms/1/temperature_sensors/1/21.0
+22.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/22.0
+22.0*C (Room 1 - Temperature sensor 1)
+rooms/1/temperature_sensors/1/22.0
+26.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/26.0
+28.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/28.0
+23.0*C (Room 1 - Temperature sensor 1)
+rooms/1/temperature_sensors/1/23.0
+27.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/27.0
+22.0*C (Room 1 - Temperature sensor 1)
+rooms/1/temperature_sensors/1/22.0
+29.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/29.0
+27.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/27.0
+28.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/28.0
+23.0*C (Room 1 - Temperature sensor 1)
+rooms/1/temperature_sensors/1/23.0
+27.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/27.0
+22.0*C (Room 1 - Temperature sensor 1)
+rooms/1/temperature_sensors/1/22.0
+28.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/28.0
+27.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/27.0
+26.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/26.0
+31.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/31.0
+27.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/27.0
+21.0*C (Room 1 - Temperature sensor 1)
+rooms/1/temperature_sensors/1/21.0
+22.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/22.0
+22.0*C (Room 1 - Temperature sensor 1)
+rooms/1/temperature_sensors/1/22.0
+27.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/27.0
+28.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/28.0
+21.0*C (Room 1 - Temperature sensor 1)
+rooms/1/temperature_sensors/1/21.0
+24.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/24.0
+22.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/22.0
+22.0*C (Room 1 - Temperature sensor 1)
+rooms/1/temperature_sensors/1/22.0
+27.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/27.0
+26.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/26.0
+27.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/27.0
+28.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/28.0
+29.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/29.0
+27.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/27.0
+23.0*C (Room 1 - Temperature sensor 1)
+rooms/1/temperature_sensors/1/23.0
+25.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/25.0
+22.0*C (Room 1 - Temperature sensor 1)
+rooms/1/temperature_sensors/1/22.0
+28.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/28.0
+29.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/29.0
+28.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/28.0
+29.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/29.0
+28.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/28.0
+30.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/30.0
+27.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/27.0
+32.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/32.0
+26.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/26.0
+31.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/31.0
+21.0*C (Room 1 - Temperature sensor 1)
+rooms/1/temperature_sensors/1/21.0
+22.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/22.0
+23.0*C (Room 1 - Temperature sensor 1)
+rooms/1/temperature_sensors/1/23.0
+25.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/25.0
+22.0*C (Room 1 - Temperature sensor 1)
+rooms/1/temperature_sensors/1/22.0
+28.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/28.0
+21.0*C (Room 1 - Temperature sensor 1)
+rooms/1/temperature_sensors/1/21.0
+22.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/22.0
+22.0*C (Room 1 - Temperature sensor 1)
+rooms/1/temperature_sensors/1/22.0
+29.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/29.0
+32.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/32.0
+28.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/28.0
+26.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/26.0
+21.0*C (Room 1 - Temperature sensor 1)
+rooms/1/temperature_sensors/1/21.0
+22.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/22.0
+22.0*C (Room 1 - Temperature sensor 1)
+rooms/1/temperature_sensors/1/22.0
+28.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/28.0
+26.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/26.0
+28.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/28.0
+27.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/27.0
+26.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/26.0
+29.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/29.0
+23.0*C (Room 1 - Temperature sensor 1)
+rooms/1/temperature_sensors/1/23.0
+26.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/26.0
+22.0*C (Room 1 - Temperature sensor 1)
+rooms/1/temperature_sensors/1/22.0
+28.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/28.0
+27.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/27.0
+29.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/29.0
+27.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/27.0
+21.0*C (Room 1 - Temperature sensor 1)
+rooms/1/temperature_sensors/1/21.0
+22.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/22.0
+22.0*C (Room 1 - Temperature sensor 1)
+rooms/1/temperature_sensors/1/22.0
+31.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/31.0
+21.0*C (Room 1 - Temperature sensor 1)
+rooms/1/temperature_sensors/1/21.0
+22.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/22.0
+22.0*C (Room 1 - Temperature sensor 1)
+rooms/1/temperature_sensors/1/22.0
+27.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/27.0
+26.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/26.0
+28.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/28.0
+23.0*C (Room 1 - Temperature sensor 1)
+rooms/1/temperature_sensors/1/23.0
+26.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/26.0
+21.0*C (Room 1 - Temperature sensor 1)
+rooms/1/temperature_sensors/1/21.0
+22.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/22.0
+22.0*C (Room 1 - Temperature sensor 1)
+rooms/1/temperature_sensors/1/22.0
+32.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/32.0
+28.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/28.0
+26.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/26.0
+21.0*C (Room 1 - Temperature sensor 1)
+rooms/1/temperature_sensors/1/21.0
+22.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/22.0
+22.0*C (Room 1 - Temperature sensor 1)
+rooms/1/temperature_sensors/1/22.0
+27.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/27.0
+29.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/29.0
+28.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/28.0
+27.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/27.0
+29.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/29.0
+28.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/28.0
+23.0*C (Room 1 - Temperature sensor 1)
+rooms/1/temperature_sensors/1/23.0
+26.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/26.0
+27.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/27.0
+22.0*C (Room 1 - Temperature sensor 1)
+rooms/1/temperature_sensors/1/22.0
+32.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/32.0
+27.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/27.0
+28.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/28.0
+23.0*C (Room 1 - Temperature sensor 1)
+rooms/1/temperature_sensors/1/23.0
+26.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/26.0
+27.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/27.0
+22.0*C (Room 1 - Temperature sensor 1)
+rooms/1/temperature_sensors/1/22.0
+28.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/28.0
+27.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/27.0
+28.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/28.0
+27.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/27.0
+21.0*C (Room 1 - Temperature sensor 1)
+rooms/1/temperature_sensors/1/21.0
+22.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/22.0
+22.0*C (Room 1 - Temperature sensor 1)
+rooms/1/temperature_sensors/1/22.0
+27.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/27.0
+28.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/28.0
+23.0*C (Room 1 - Temperature sensor 1)
+rooms/1/temperature_sensors/1/23.0
+26.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/26.0
+22.0*C (Room 1 - Temperature sensor 1)
+rooms/1/temperature_sensors/1/22.0
+32.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/32.0
+26.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/26.0
+21.0*C (Room 1 - Temperature sensor 1)
+rooms/1/temperature_sensors/1/21.0
+25.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/25.0
+22.0*C (Room 1 - Temperature sensor 1)
+rooms/1/temperature_sensors/1/22.0
+27.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/27.0
+26.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/26.0
+28.0% (Room 1 - Humidity sensor 1)
+rooms/1/humidity_sensors/1/28.0
+30.0% (Room 

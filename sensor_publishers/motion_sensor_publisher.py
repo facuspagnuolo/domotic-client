@@ -1,10 +1,8 @@
 #!/usr/bin/python
-from constants import *
+import sys
 import RPi.GPIO as GPIO
 import time
 import os
-import sys
-import Adafruit_DHT
 import paho.mqtt.client as mqtt
 
 GPIO.setmode(GPIO.BCM)
