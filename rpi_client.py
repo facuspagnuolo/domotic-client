@@ -43,6 +43,7 @@ def build_network_configuration_file():
    os.system('echo "}" >> config/wifi_interface.conf')
 
 def connect_to_ad_hoc():
+   os.system('sudo service isc-dhcp-server restart')
    os.system('sudo cp /etc/network/interfaces_adhoc /etc/network/interfaces')
    os.system('sudo ifdown wlan0')
    os.system('sudo ifup wlan0')

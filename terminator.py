@@ -1,9 +1,10 @@
 #!/usr/bin/python
 import os
 
-pids = [line.rstrip('\n') for line in open('logs/subprocesses_pids.txt')]
+for pid in os.popen("ps aux | grep rpi_client | awk {'print $2'} | head -n -1").read().splitlines():
+   os.system("sudo kill -9 %s" % pid)
 
-for pid in pids:
+for pid in os.popen("ps aux | grep sensor_publisher | awk {'print $2'} | head -n -1").read().splitlines():
    os.system("sudo kill -9 %s" % pid)
 
 os.system("sudo python reset_gpios.py")
