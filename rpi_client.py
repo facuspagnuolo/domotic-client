@@ -83,10 +83,6 @@ def get_domotic_server_ip():
 	 time.sleep(2)
          continue
 
-def get_ip_address():
-   f = os.popen('/sbin/ifconfig -a wlan0 | grep "inet\ addr" | cut -d: -f2 | cut -d" " -f1')
-   return f.read().rstrip('\n')
-
 def clean_gpios():
    GPIO.cleanup()
    GPIO.setmode(GPIO.BCM)
@@ -99,9 +95,8 @@ def clean_gpios():
 
 def initialize_publishers():
    print("Initialize cameras publishers")
-   ip_address = get_ip_address()
    for key in CAMERAS:
-      pid = subprocess.Popen(["sudo", "python", "sensor_publishers/camera_publisher.py", domotic_server_ip, ROOM_ID, key, ip_address, CAMERAS[key]]).pid
+      pid = subprocess.Popen(["sudo", "python", "sensor_publishers/camera_publisher.py", domotic_server_ip, ROOM_ID, key, CAMERAS[key]]).pid
       os.system("echo '%s' > logs/subprocesses_pids.txt" % str(pid))
 
    print("Initialize motion sensors publishers")
