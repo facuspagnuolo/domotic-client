@@ -14,7 +14,7 @@ client = mqtt.Client()
 client.connect(server_ip, 1883, 60)
 
 def get_ip_address():
-    f = os.popen("ip a show wlan0 | grep 'inet ' | awk {'print $2'} | sed -n 2p | cut -f1 -d '/'")
+    f = os.popen("ip a show wlan0 | grep 'inet ' | awk {'print $2'} | cut -f1 -d '/'")
     return f.read().rstrip('\n')
 
 while True:

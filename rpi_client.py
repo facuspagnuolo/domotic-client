@@ -9,14 +9,25 @@ import socket
 import struct
 import time
 
+GPIO.setmode(GPIO.BCM)
 domotic_server_ip = ''
 network = ''
 password = ''
 
+def initialize_gpios():
+   GPIO.setmode(GPIO.BCM)
+   for key in LIGHT_PINS:
+      GPIO.setup(LIGHT_PINS[key], GPIO.OUT)
+      GPIO.output(LIGHT_PINS[key], GPIO.HIGH)
+   for key in VALVE_PINS:
+      GPIO.setup(VALVE_PINS[key], GPIO.OUT)
+      GPIO.output(VALVE_PINS[key], GPIO.HIGH)
+    
 def get_network_data():
    global network
    global password
 
+   print "Waiting for adhoc connection from the server"
    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
    sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
    sock.bind((NETWORK_DISCOVERY_SERVER_IP, NETWORK_DISCOVERY_SERVER_PORT))
@@ -34,31 +45,29 @@ def get_network_data():
    session.close
 
 def build_network_configuration_file():
-   os.system('echo "ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev" > config/wifi_interface.conf')
-   os.system('echo "update_config=1" >> config/wifi_interface.conf')
-   os.system('echo "" >> config/wifi_interface.conf')
-   os.system('echo "network={" >> config/wifi_interface.conf')
-   os.system("""echo '     ssid=\"%s\"' >> config/wifi_interface.conf""" % network)
-   os.system("""echo '     psk=\"%s\"' >> config/wifi_interface.conf""" % password)
-   os.system('echo "}" >> config/wifi_interface.conf')
+   os.system('echo "ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev" > config/wpa_supplicant.conf')
+   os.system('echo "update_config=1" >> config/wpa_supplicant.conf')
+   os.system('echo "" >> config/wpa_supplicant.conf')
+   os.system('echo "network={" >> config/wpa_supplicant.conf')
+   os.system("""echo '     ssid=\"%s\"' >> config/wpa_supplicant.conf""" % network)
+   os.system("""echo '     psk=\"%s\"' >> config/wpa_supplicant.conf""" % password)
+   os.system('echo "}" >> config/wpa_supplicant.conf')
 
-def connect_to_ad_hoc():
+def restart_ad_hoc():
+   print 'Restarting DHCP adhoc server'
    os.system('sudo service isc-dhcp-server restart')
-   os.system('sudo cp /etc/network/interfaces_adhoc /etc/network/interfaces')
-   os.system('sudo ifdown wlan0')
-   os.system('sudo ifup wlan0')
+   print 'Restarting adhoc interface'
+   os.system('sudo ifdown wlan1')
+   os.system('sudo ifup wlan1')
 
 def connect_to_network():
    print "Connecting to network %s with password %s" %(network, password)
-   os.system('sudo cp config/wifi_interface.conf /etc/wpa_supplicant/wpa_supplicant.conf')
-   os.system('sudo cp /etc/network/interfaces_default /etc/network/interfaces')
+   os.system('sudo cp config/wpa_supplicant.conf /etc/wpa_supplicant/wpa_supplicant.conf')
    os.system('sudo ifdown wlan0')
    os.system('sudo ifup wlan0')
-   os.system('sudo service isc-dhcp-server restart')
 
 def find_and_connect_to_network():
-   print 'Connecting to ad-hoc'
-   connect_to_ad_hoc()
+   restart_ad_hoc()
    get_network_data()
    build_network_configuration_file()
    connect_to_network()
@@ -82,16 +91,6 @@ def get_domotic_server_ip():
          print "Could not reach domotic server :" + str(e)
 	 time.sleep(2)
          continue
-
-def clean_gpios():
-   GPIO.cleanup()
-   GPIO.setmode(GPIO.BCM)
-   for key in LIGHT_PINS:
-     GPIO.setup(LIGHT_PINS[key], GPIO.OUT)
-     GPIO.output(LIGHT_PINS[key], GPIO.HIGH)
-   for key in VALVE_PINS:
-     GPIO.setup(VALVE_PINS[key], GPIO.OUT)
-     GPIO.output(VALVE_PINS[key], GPIO.HIGH)
 
 def initialize_publishers():
    print("Initialize cameras publishers")
@@ -160,9 +159,9 @@ def on_message(client, userdata, msg):
          client.publish("valves", "rooms/"+ ROOM_ID +"/valves/"+id+"/OFF")
 
 
-clean_gpios()
 find_and_connect_to_network()
 get_domotic_server_ip()
+initialize_gpios()
 initialize_publishers()
 client = mqtt.Client()
 client.on_connect = on_connect
