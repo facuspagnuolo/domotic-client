@@ -110,12 +110,12 @@ def initialize_publishers():
 
    print("Initialize luminosity sensors publishers")
    for key in LUMINOSITY_SENSOR_PINS:
-      pid = subprocess.Popen(["sudo", "python", "sensor_publishers/luminosity_sensor_publisher.py", domotic_server_ip, ROOM_ID, key, str(LUMINOSITY_SENSOR_PINS[key])]).pid
+      pid = subprocess.Popen(["sudo", "python", "sensor_publishers/luminosity_analog_sensor_publisher.py", domotic_server_ip, ROOM_ID, key, str(LUMINOSITY_SENSOR_MCP3008_CHANNELS[key])]).pid
       os.system("echo '%s' >> logs/subprocesses_pids.txt" % str(pid))
 
    print("Initialize soil humidity sensors publishers")
    for key in SOIL_HUMIDITY_SENSOR_PINS:
-      pid = subprocess.Popen(["sudo", "python", "sensor_publishers/soil_humidity_sensor_publisher.py", domotic_server_ip, ROOM_ID, key, str(SOIL_HUMIDITY_SENSOR_PINS[key])]).pid
+      pid = subprocess.Popen(["sudo", "python", "sensor_publishers/soil_humidity_analog_sensor_publisher.py", domotic_server_ip, ROOM_ID, key, str(SOIL_HUMIDITY_SENSOR_MCP3008_CHANNELS[key])]).pid
       os.system("echo '%s' >> logs/subprocesses_pids.txt" % str(pid))
 
 def on_connect(client, userdata, rc):

@@ -21,14 +21,15 @@ while True:
   previous_state = current_state
   current_state = GPIO.input(sensor_pin)
   if current_state != previous_state:
+      print "------------------------------------------------------"
       if current_state == True:
-          print("MOTION DETECTED! (Room " + room_id + " - Motion sensor " + sensor_id + ")")
+          print "MOTION (detected):"  
 	  message = "rooms/" + room_id + "/motion_sensors/" + sensor_id + "/ON"
   	  print(message)
           client.publish("motion_sensors", message)
       else:
-          print("... (Room " + room_id + " - Motion sensor " + sensor_id + ")")
+          print "MOTION (not detected):"  
 	  message = "rooms/" + room_id + "/motion_sensors/" + sensor_id + "/OFF"
 	  print(message)
           client.publish("motion_sensors", message)
-
+      print "------------------------------------------------------"

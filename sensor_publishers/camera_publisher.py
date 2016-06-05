@@ -19,8 +19,10 @@ def get_ip_address():
 
 while True:
     camera_ip = get_ip_address()
-    print(camera_ip + ":" + camera_port + " (Room " + room_id + " - Camera " + camera_id + ")")
+    print "------------------------------------------------------"
+    print "CAMERA:"
     message = "rooms/" + room_id + "/cameras/" + camera_id + "/" + camera_ip + "/" + camera_port
     print(message)
     client.publish("cameras", message)
+    print "------------------------------------------------------"
     time.sleep(10)

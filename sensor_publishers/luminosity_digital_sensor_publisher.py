@@ -1,10 +1,9 @@
 #!/usr/bin/python
-import sys
+import paho.mqtt.client as mqtt
 import RPi.GPIO as GPIO
 import time
+import sys
 import os
-import Adafruit_DHT
-import paho.mqtt.client as mqtt
 
 GPIO.setmode(GPIO.BCM)
 server_ip = sys.argv[1]

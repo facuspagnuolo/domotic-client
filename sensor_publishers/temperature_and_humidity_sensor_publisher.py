@@ -19,30 +19,35 @@ current_temperature = 0
 current_humidity = 0
 
 while True:
+  time.sleep(5)
   previous_temperature = current_temperature
   previous_humidity = current_humidity
   current_humidity, current_temperature = Adafruit_DHT.read_retry(sensor_pin, sensor_pin)
   
   if current_temperature != previous_temperature:
+      print "------------------------------------------------------"
       if current_temperature is not None:
-          print("{0:0.1f}*C (Room ".format(current_temperature) + room_id + " - Temperature sensor " + sensor_id + ")")
+          print "TEMPERATURE:"
 	  message = "rooms/" + room_id + "/temperature_sensors/" + sensor_id + "/" + str('{0:0.1f}'.format(current_temperature))
 	  print(message)
           client.publish("temperature_sensors", message)
       else:
-          print("FAILED! (Room " + room_id + " - Temperature sensor " + sensor_id + ")")
+          print "TEMPERATURE (failed):"
 	  message = "rooms/" + room_id + "/temperature_sensors/" + sensor_id + "/failed"
 	  print(message)
           client.publish("temperature_sensors", message)
+      print "------------------------------------------------------"
   
   if current_humidity != previous_humidity:
+      print "------------------------------------------------------"
       if current_humidity is not None:
-          print("{0:0.1f}% (Room ".format(current_humidity) + room_id + " - Humidity sensor " + sensor_id + ")")
+          print "HUMIDITY:"
 	  message = "rooms/" + room_id + "/humidity_sensors/" + sensor_id + "/" + str("{0:0.1f}".format(current_humidity))
 	  print(message)
           client.publish("humidity_sensors", message)
       else:
-          print("FAILED! (Room " + room_id + " - Humidity sensor " + sensor_id + ")")
+          print "HUMIDITY (failed):"
 	  message = "rooms/" + room_id + "/humidity_sensors/" + sensor_id + "/failed"
 	  print(message)
 	  client.publish("humidity_sensors", message)
+      print "------------------------------------------------------"
