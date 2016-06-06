@@ -103,10 +103,10 @@ def initialize_publishers():
       pid = subprocess.Popen(["sudo", "python", "sensor_publishers/motion_sensor_publisher.py", domotic_server_ip, ROOM_ID, key, str(MOTION_SENSOR_PINS[key])]).pid
       os.system("echo '%s' >> logs/subprocesses_pids.txt" % str(pid))
 
-   print("Initialize temperature and humidity sensors publishers")
-   for key in TEMPERATURE_SENSOR_PINS:
-      pid = subprocess.Popen(["sudo", "python", "sensor_publishers/temperature_and_humidity_sensor_publisher.py", domotic_server_ip, ROOM_ID, key, str(TEMPERATURE_SENSOR_PINS[key])]).pid
-      os.system("echo '%s' >> logs/subprocesses_pids.txt" % str(pid))
+   #print("Initialize temperature and humidity sensors publishers")
+   #for key in TEMPERATURE_SENSOR_PINS:
+      #pid = subprocess.Popen(["sudo", "python", "sensor_publishers/temperature_and_humidity_sensor_publisher.py", domotic_server_ip, ROOM_ID, key, str(TEMPERATURE_SENSOR_PINS[key])]).pid
+      #os.system("echo '%s' >> logs/subprocesses_pids.txt" % str(pid))
 
    print("Initialize luminosity sensors publishers")
    for key in LUMINOSITY_SENSOR_PINS:
