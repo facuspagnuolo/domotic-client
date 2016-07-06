@@ -57,12 +57,14 @@ def restart_ad_hoc():
    print 'Restarting DHCP adhoc server'
    os.system('sudo service isc-dhcp-server restart')
    print 'Restarting adhoc interface'
-   os.system('sudo ifdown wlan1')
-   os.system('sudo ifup wlan1')
+   os.system('sudo cp config/etc_network_interfaces_adhoc /etc/network/interfaces')
+   os.system('sudo ifdown wlan0')
+   os.system('sudo ifup wlan0')
 
 def connect_to_network():
    print "Connecting to network %s with password %s" %(network, password)
    os.system('sudo cp config/wpa_supplicant.conf /etc/wpa_supplicant/wpa_supplicant.conf')
+   os.system('sudo cp config/etc_network_interfaces_wifi /etc/network/interfaces')
    os.system('sudo ifdown wlan0')
    os.system('sudo ifup wlan0')
 
@@ -109,12 +111,12 @@ def initialize_publishers():
       #os.system("echo '%s' >> logs/subprocesses_pids.txt" % str(pid))
 
    print("Initialize luminosity sensors publishers")
-   for key in LUMINOSITY_SENSOR_PINS:
+   for key in LUMINOSITY_SENSOR_MCP3008_CHANNELS:
       pid = subprocess.Popen(["sudo", "python", "sensor_publishers/luminosity_analog_sensor_publisher.py", domotic_server_ip, ROOM_ID, key, str(LUMINOSITY_SENSOR_MCP3008_CHANNELS[key])]).pid
       os.system("echo '%s' >> logs/subprocesses_pids.txt" % str(pid))
 
    print("Initialize soil humidity sensors publishers")
-   for key in SOIL_HUMIDITY_SENSOR_PINS:
+   for key in SOIL_HUMIDITY_SENSOR_MCP3008_CHANNELS:
       pid = subprocess.Popen(["sudo", "python", "sensor_publishers/soil_humidity_analog_sensor_publisher.py", domotic_server_ip, ROOM_ID, key, str(SOIL_HUMIDITY_SENSOR_MCP3008_CHANNELS[key])]).pid
       os.system("echo '%s' >> logs/subprocesses_pids.txt" % str(pid))
 
