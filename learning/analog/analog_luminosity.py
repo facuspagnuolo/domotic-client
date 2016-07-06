@@ -8,7 +8,7 @@ spi = spidev.SpiDev()
 spi.open(0,0)
 
 # Define constants
-channel = 0
+channel = 7
 delay = 2
  
 # Function to read SPI data from MCP3008 chip
