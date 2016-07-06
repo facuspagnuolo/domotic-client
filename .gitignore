@@ -1,3 +1,6 @@
 /logs
 .idea/
 .DS_Store
+constants.py
+constants.pyc
+
