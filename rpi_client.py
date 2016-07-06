@@ -69,9 +69,10 @@ def connect_to_network():
    os.system('sudo ifup wlan0')
 
 def find_and_connect_to_network():
-   restart_ad_hoc()
-   get_network_data()
-   build_network_configuration_file()
+   #DHCP me esta dando cualquier IP cuando me conecto al adhoc
+   #restart_ad_hoc()
+   #get_network_data()
+   #build_network_configuration_file()
    connect_to_network()
 
 def get_domotic_server_ip():
@@ -105,10 +106,10 @@ def initialize_publishers():
       pid = subprocess.Popen(["sudo", "python", "sensor_publishers/motion_sensor_publisher.py", domotic_server_ip, ROOM_ID, key, str(MOTION_SENSOR_PINS[key])]).pid
       os.system("echo '%s' >> logs/subprocesses_pids.txt" % str(pid))
 
-   #print("Initialize temperature and humidity sensors publishers")
-   #for key in TEMPERATURE_SENSOR_PINS:
-      #pid = subprocess.Popen(["sudo", "python", "sensor_publishers/temperature_and_humidity_sensor_publisher.py", domotic_server_ip, ROOM_ID, key, str(TEMPERATURE_SENSOR_PINS[key])]).pid
-      #os.system("echo '%s' >> logs/subprocesses_pids.txt" % str(pid))
+   print("Initialize temperature and humidity sensors publishers")
+   for key in TEMPERATURE_SENSOR_PINS:
+      pid = subprocess.Popen(["sudo", "python", "sensor_publishers/temperature_and_humidity_sensor_publisher.py", domotic_server_ip, ROOM_ID, key, str(TEMPERATURE_SENSOR_PINS[key])]).pid
+      os.system("echo '%s' >> logs/subprocesses_pids.txt" % str(pid))
 
    print("Initialize luminosity sensors publishers")
    for key in LUMINOSITY_SENSOR_MCP3008_CHANNELS:
