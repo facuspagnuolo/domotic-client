@@ -26,7 +26,7 @@ def read_channel(channel):
   return data
 
 while True:
-  time.sleep(5)
+  time.sleep(2)
   previous_luminosity = current_luminosity
   current_luminosity = read_channel(sensor_mcp3008_channel)
   if current_luminosity != previous_luminosity:
